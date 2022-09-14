@@ -1,0 +1,17 @@
+div{
+    background-color: black ;
+    
+}
+
+app-redes{ 
+    
+    float: right;
+    margin-top: 25px;
+ }
+
+ app-logo-ap{ 
+    
+    float: left;
+    margin-left: 25px;
+    margin-bottom: 25px;
+ }
