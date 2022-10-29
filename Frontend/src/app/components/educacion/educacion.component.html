@@ -1,45 +1,32 @@
+
+
 <div class="row">
-    <h2>Educación</h2>
-    <div class="col-lg-2"><a href="https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa"><img
-                src="../../../assets/LogoAP.png"></a></div>
-    <div class="col-lg-10">
-        <h2>Argentina Programa - #YoProgramo - </h2>
-        <h3>Feb. 2022-Agosto 2022</h3>
-        <br>
-        <h5>Segunda etapa del Plan nacional de formación en programación.</h5>
+    <h1>Educación</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+            Agregar
+        </button>
     </div>
 
-
-    <div class="col-lg-2"><a href="https://www.argentina.gob.ar/produccion/argentina-programa/primera-etapa"><img
-                src="../../../assets/coder.png" id="coder"></a></div>
-    <div class="col-lg-10">
-        <h2>Argentina Programa - #SeProgramar - </h2>
-        <h3>Sept. 2021 - Dic. 2021</h3>
-        <br>
-        <h5>Primera etapa del Plan nacional de formación en programación.</h5>
+    <div class="col lg 1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Educacion of educacion">
+                    <td>
+                        <h2>{{Educacion.nombreE}}</h2>
+                    </td>
+                    <td>{{Educacion.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                            <i class="bi bi-pencil-fill"></i></button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                            <i class="bi bi-trash-fill" ></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="col-lg-2"></div>
-    <div class="col-lg-10">
-        <h2>Auxiliar de Abordo (Azafata de Aeronaves) - </h2>
-        <h3>2004</h3>
-        <br>
-        <h5>Curso de Auxiliar de Abordo para Aeronaves. Inst. Aeroespacial. Cap. Federal</h5>
-    </div>
-
-    <div class="col-lg-2"><a href="https://es-la.facebook.com/secundaria8pilar/"></a></div>
-    <div class="col-lg-10">
-        <h2>EEMN°8 "Tratado del Pilar" - </h2>
-        <h3>1992 - 1996</h3>
-        <br>
-        <h5>Educación Escuela Secundaria. Título: Pto. Mercantil</h5>
-    </div>
-
-    <div class="col-lg-2"><a href="https://culturalinglesaweb.com.ar/"><img
-                src="../../../assets/Cultural-40-aniversario-animado-chico.gif" id="CIBA"></a></div>
-    <div class="col-lg-10">
-        <h2>Inglés - "Cultural Inglesa de Buenos Aires"</h2> - <h3>1989 - 1994</h3>
-        <br>
-        <h5>Educación en Lengua Inglesa, hasta 5to. año.</h5>
-    </div>
-</div>

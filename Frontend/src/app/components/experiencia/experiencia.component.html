@@ -1,22 +1,29 @@
 <div class="row">
-    <h2>Experiencia laboral</h2>
-    <div class="col-lg-2"><img src="../../../assets/ClasesDeIngles.png"></div>
-    <div class="col-lg-10">
-        <h2>Tutora de Inglés</h2> - <h3>1999 - 2021</h3>
-        <h5>Clases de apoyo de Inglés a niños y adolescentes en edad escolar; preparación a exámenes. Pilar/ Tortuguitas, Bs.As.</h5>
+    <h1>Experiencia laboral</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+            Agregar
+        </button>
     </div>
 
-
-    <div class="col-lg-2"><img src="../../../assets/coster-logo.png" ><a href="http://www.coster.com/placemarks/coster-argentina/"></a></div>
-    <div class="col-lg-10">
-        <h2>Empresa Plástica - Recepcionista/ Secretaria</h2> - <h3>Junio 2012 - Sept. 2015</h3>
-        <h5>Tareas desempeñadas como Recepcionista, Administrativa y Secretaria de todos los sectores que conforman la Empresa. Parque Industrial Pilar, Bs. As.</h5>
+    <div class="col lg 1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Experiencia of expe">
+                    <td>
+                        <h2>{{Experiencia.nombreE}}</h2>
+                    </td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
+                            <i class="bi bi-pencil-fill"></i></button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                            <i class="bi bi-trash-fill" ></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-
-    <div class="col-lg-2"><a href="https://hostal-azul-necocli.hotelmix.es/"><img
-                src="../../../assets/HostalAzulLogo.jpg"></a></div>
-    <div class="col-lg-10">
-        <h2>Hotel Familiar y de descanso - Recepcionista</h2> - <h3>Sept. 2003 - Junio 2011</h3>
-        <h5>Tareas de Recepción de pasajeros y Administración del Hotel.</h5></div>
-</div>

@@ -1,37 +1,53 @@
-
 package com.portfolio.msoledadk.Service;
 
 import com.portfolio.msoledadk.Entity.Persona;
-import com.portfolio.msoledadk.Interface.IPersonaService;
 import com.portfolio.msoledadk.Repository.IPersonaRepository;
 import java.util.List;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ImpPersonaService implements IPersonaService{
-    @Autowired IPersonaRepository ipersonaRepository; 
+@Transactional
+public class ImpPersonaService {
 
-    @Override
-    public List<Persona> getPersona() {
-   List<Persona> persona = ipersonaRepository.findAll();
-   return persona;
+    @Autowired
+    IPersonaRepository ipersonaRepository;
+
+    public List<Persona> list() {
+        return ipersonaRepository.findAll();
     }
 
-    @Override
-    public void savePersona(Persona persona) {
-    ipersonaRepository.save(persona);
+    public Optional<Persona> getOne(int id) {
+        return ipersonaRepository.findById(id);
     }
 
-    @Override
-    public void deletePersona(Long id) {
-    ipersonaRepository.deleteById(id);
+    public Optional<Persona> getByNombre(String nombre) {
+        return ipersonaRepository.findByNombre(nombre);
     }
 
-    @Override
-    public Persona findPersona(Long id) {
-    Persona persona = ipersonaRepository.findById(id).orElse(null);
-    return persona;
+    public void save(Persona persona) {
+        ipersonaRepository.save(persona);
     }
-    
+
+    public void delete(int id) {
+        ipersonaRepository.deleteById(id);
+    }
+
+    public boolean existsById(int id) {
+        return ipersonaRepository.existsById(id);
+    }
+
+    public boolean existsByNombre(String nombre) {
+        return ipersonaRepository.existsByNombre(nombre);
+    }
+
+    public boolean existsByNombreE(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getByNmbre(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

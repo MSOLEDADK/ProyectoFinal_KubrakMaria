@@ -1,7 +1,9 @@
 <div>
     
-<a href=""><img src="../../../assets/icons8-linkedin-48.png" id="linkedin"></a>
-<a href=""><img src="../../../assets/icons8-github-50.png" id="github" background="white"></a><button type="button" class="btn btn-secondary">INGRESAR</button>
+<a href="https://www.linkedin.com/in/msoledadk-czerwone-02360624b/"><img src="../../../assets/icons8-linkedin-48.png" id="linkedin"></a>
+<a href="https://github.com/MSOLEDADK/"><img src="../../../assets/icons8-github-50.png" id="github" background="white"></a>
+<button type="button" class="btn btn-secondary" (click)="login()" *ngIf="!isLogged">INGRESAR</button>
+<button type="button" class="btn btn-secondary" (click)="onLogOut()"*ngIf="isLogged">CERRAR SESIÓN</button>
 
 
 </div>

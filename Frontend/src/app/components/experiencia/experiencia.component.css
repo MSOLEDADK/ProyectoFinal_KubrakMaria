@@ -2,13 +2,14 @@
     padding: 70px;
 }
 div{
-    background-color: rgb(48, 46, 46);
+    background-color: rgb(63, 62, 62);
     color: white;
     padding: 20px;
     
 }
-h2, h3, h5, img{
+h2, h3, h5, table, img{
     display: inline;
+    color: white;
 }
 
 img{
@@ -16,3 +17,4 @@ img{
     width: 180px;
     
 }
+
