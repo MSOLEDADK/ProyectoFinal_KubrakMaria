@@ -1,11 +1,20 @@
-
+.row{
+    padding: 70px;
+}
 div{
-    background-color: rgb(114, 110, 110);
+    background-color: rgb(63, 62, 62);
     color: white;
-    padding: 30px;
+    padding: 20px;
+    
+}
+h2, h3, h5, table, img{
+    display: inline;
+    color: white;
+}
+
+img{
+    padding: 15px 15px;
+    width: 180px;
     
 }
 
-.btn{
-    font: white;
-}

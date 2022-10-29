@@ -12,7 +12,6 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SkillsComponent } from './components/skills/skills.component';
-import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,8 +28,7 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.com
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { NewProyectoComponent } from './components/proyectos/new-proyecto/new-proyecto.component';
-import { EditProyectoComponent } from './components/proyectos/edit-proyecto/edit-proyecto.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +41,6 @@ import { EditProyectoComponent } from './components/proyectos/edit-proyecto/edit
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
-    ProyectosComponent,
     FooterComponent,
     HomeComponent,
     LoginComponent,
@@ -53,10 +50,7 @@ import { EditProyectoComponent } from './components/proyectos/edit-proyecto/edit
     EditeducacionComponent,
     EditSkillComponent,
     NewSkillComponent,
-    EditSkillComponent,
-    EditAcercaDeComponent,
-    NewProyectoComponent,
-    EditProyectoComponent
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
@@ -64,10 +58,7 @@ import { EditProyectoComponent } from './components/proyectos/edit-proyecto/edit
     BrowserAnimationsModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideStorage(() => getStorage()),
-    
+    HttpClientModule
   ],
   providers: [
     interceptorProvider
